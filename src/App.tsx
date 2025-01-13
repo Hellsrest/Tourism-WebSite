@@ -54,7 +54,7 @@ function App() {
     },
     {
       id: "4",
-      name: "Product 4",
+      name: "Product 40",
       image: cardimage4,
       price: "$40",
     },
