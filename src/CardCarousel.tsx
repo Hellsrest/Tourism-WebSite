@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import "./cardCarousel.css";
+import "./CardCarousel.css";
 
 interface CardData {
   id: string;
