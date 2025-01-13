@@ -102,7 +102,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, links, interval }) => {
   };
 
   // Improved click handler to better distinguish between drags and clicks
-  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleClick = () => {
     const dragDuration = Date.now() - dragStartTime.current;
     
     // Only redirect if it was a short interaction and minimal dragging occurred
