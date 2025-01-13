@@ -1,0 +1,84 @@
+/* Container Styles */
+.video-text-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #063969; /* Background color */
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 20px;
+  }
+  
+  /* Text Section */
+  .text-section {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+  }
+  
+  .text-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .text-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Button Styles */
+  .click-me-button {
+    background-color: #2c8bc4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .click-me-button:hover {
+    background-color: #225f8a;
+  }
+  
+  /* Video Section */
+  .video-section {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    aspect-ratio: 16 / 9; /* Maintain video aspect ratio */
+  }
+  
+  .video-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .video-thumbnail:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .video-text-container {
+      flex-direction: column; /* Stack items top to bottom */
+    }
+  
+    .text-section,
+    .video-section {
+      min-width: 100%; /* Full width on mobile */
+    }
+  
+    .text-section {
+      text-align: center; /* Center text on mobile */
+    }
+  }
+  

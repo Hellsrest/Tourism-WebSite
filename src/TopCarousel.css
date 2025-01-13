@@ -1,0 +1,21 @@
+.carousel-container {
+    position: relative;
+    user-select: none;
+  }
+  
+  .carousel-image {
+    height: 25vh; /* Default height for mobile */
+    width: 100%;
+    display: block;
+  }
+  
+  /* Adjust height for laptop/desktop screens */
+  @media (min-width: 1024px) {
+    .carousel-image {
+      height: 50vh; /* 50% of viewport height for desktop */
+    }
+  }
+  
+  .carousel-dots {
+    z-index: 1;
+  }

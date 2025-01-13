@@ -1,0 +1,90 @@
+/* Container: Responsive grid */
+.horizontal-hover-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 4 items on desktop, 2x2 on mobile */
+    gap: 20px;
+    width: 100%;
+  }
+  
+  /* Hover Item */
+  .hover-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Image Container */
+  .hover-image-container {
+    position: relative;
+    width: 100%;
+    height: 150px; /* Consistent height for all images */
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  /* Image Styling */
+  .hover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  /* Text Styling */
+  .hover-text {
+    margin-top: 10px;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  /* Underline on Text Hover */
+  .hover-text:hover {
+    color: #007bff; /* Optional hover color for text */
+    text-decoration: underline;
+  }
+  
+  /* Zoom and Pan Effect on Text Hover */
+  .hover-text:hover ~ .hover-image-container .hover-image,
+  .hover-text:hover + .hover-image-container .hover-image {
+    transform: scale(1.2);
+    animation: pan 4s linear infinite alternate; /* Pan animation on hover */
+  }
+  
+  /* Zoom Effect on Image Hover */
+  .hover-image-container:hover .hover-image {
+    transform: scale(1.2); /* Zoom on hover */
+    animation: none; /* Disable pan animation */
+  }
+  
+  /* Pan Animation */
+  @keyframes pan {
+    0% {
+      transform: scale(1.2) translateX(0%);
+    }
+    100% {
+      transform: scale(1.2) translateX(-20%);
+    }
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .hover-item {
+      width: 100%; /* Ensure items fit in a 2x2 grid */
+    }
+  
+    .hover-image-container {
+      height: 120px; /* Smaller height for mobile */
+    }
+  }
+  
