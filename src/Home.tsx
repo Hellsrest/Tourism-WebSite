@@ -13,10 +13,10 @@ import banner2 from "./assets/images/banner-2.jpg";
 import banner3 from "./assets/images/banner-3.jpg";
 import banner4 from "./assets/images/banner-4.jpg";
 
-import cardimage1 from "./assets/images/cardimg1.jpg";
-import cardimage2 from "./assets/images/cardimg2.jpg";
-import cardimage3 from "./assets/images/cardimg3.jpg";
-import cardimage4 from "./assets/images/cardimg4.jpg";
+import pfp1 from "/assets/images/pfp1.jpg";
+import pfp2 from "/assets/images/pfp2.jpg";
+import pfp3 from "/assets/images/pfp3.jpg";
+import pfp4 from "/assets/images/pfp4.jpg";
 
 const Home: React.FC = () => {
   
@@ -44,18 +44,12 @@ const Home: React.FC = () => {
     },
   ];
 
-  const horizentalcarditems = [
-    { image: cardimage1, text: "Item 1" },
-    { image: cardimage2, text: "Item 2" },
-    { image: cardimage3, text: "Item 3" },
-    { image: cardimage4, text: "Item 4" },
-  ];
 
   const reviews = [
     {
       id: "1",
       reviewerName: "John Doe",
-      reviewerIcon: cardimage1,
+      reviewerIcon: pfp1,
       reviewStars: 5,
       reviewDate: "Jan 10, 2025",
       reviewText: "Amazing service! Highly recommended.",
@@ -63,7 +57,7 @@ const Home: React.FC = () => {
     {
       id: "2",
       reviewerName: "Jane Smith",
-      reviewerIcon: "https://via.placeholder.com/80",
+      reviewerIcon: pfp2,
       reviewStars: 4,
       reviewDate: "Jan 5, 2025",
       reviewText: "Great experience, but room for improvement.",
@@ -71,18 +65,19 @@ const Home: React.FC = () => {
     {
       id: "3",
       reviewerName: "Alice Brown",
-      reviewerIcon: "https://via.placeholder.com/80",
+      reviewerIcon: pfp3,
       reviewStars: 5,
       reviewDate: "Dec 20, 2024",
       reviewText: "Absolutely loved it! Would book again.",
     },
-  ];
-
-  const treckingguides = [
-    { image: cardimage1, text: "Item 1" },
-    { image: cardimage2, text: "Item 2" },
-    { image: cardimage3, text: "Item 3" },
-    { image: cardimage4, text: "Item 4" },
+    {
+      id: "4",
+      reviewerName: "Bisham Raj Pandey",
+      reviewerIcon: pfp4,
+      reviewStars: 5,
+      reviewDate: "Dec 20, 2024",
+      reviewText: "I Absolutely loved it! Would book again.",
+    },
   ];
 
 
@@ -98,15 +93,15 @@ const Home: React.FC = () => {
       {/* Button to navigate to Checkout page */}
 
     </div>
-        <b>Our Trips</b>
+        <b>Featured Trips</b>
       </center>
       <CardCarousel/>
 
       <center>
-        <b>Trekking Destinations</b>
+        <b>Our Services</b>
       </center>
-      <center>Trekking and Hiking in the Himalaya</center>
-      <HorizentalCards items={horizentalcarditems} />
+      <center>Trekking and Hiking all over the World</center>
+      <HorizentalCards />
 
       <center>
         <b>Why Us</b>
@@ -121,7 +116,7 @@ const Home: React.FC = () => {
       <center>
         <b>Travel Guides</b>
       </center>
-      <HorizentalCards items={treckingguides} />
+      <HorizentalCards />
 
       <ContactInfo />
 

@@ -27,7 +27,7 @@ const CentralInformationSection: React.FC = () => {
           <iframe
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+            src="https://www.youtube.com/embed/watch?v=gCRNEJxDJKM"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -35,7 +35,7 @@ const CentralInformationSection: React.FC = () => {
           ></iframe>
         ) : (
           <img
-            src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg"
+            src="https://i.ytimg.com/vi/gCRNEJxDJKM/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLB4gENwJQukQB8aYYgRwgf198gf7Q"
             alt="Video Thumbnail"
             className="video-thumbnail"
             onClick={handleVideoPlay}

@@ -31,7 +31,6 @@ const TripDescription: React.FC = () => {
     <div className="trip-description">
       <div className="trip-description-content">
         <h2>{trip.tripname}</h2>
-        <img src={trip.timage} alt={trip.tripname} className="trip-image" />
         <p>{trip.tactualdescription}</p>
       </div>
     </div>

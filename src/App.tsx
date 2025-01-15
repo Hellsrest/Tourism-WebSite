@@ -5,6 +5,7 @@ import Home from "./Home";
 import Checkout from "./Checkout";
 import TripDescription from "./TripDescription";
 import TripLayout from "./TripLayout";
+import AllTrips from "./TripDescriptionComponents/AllTrips";
 
 const App: React.FC = () => {
   return (
@@ -36,6 +37,14 @@ const App: React.FC = () => {
             <TripLayout>
               <TripDescription />
             </TripLayout>
+          }
+        />
+        <Route
+          path="/alltrips"
+          element={
+            <Layout>
+              <AllTrips />
+            </Layout>
           }
         />
       </Routes>

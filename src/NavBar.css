@@ -1,0 +1,51 @@
+/* General Navbar Styling */
+.navbar {
+    padding: 0.5rem 1rem;
+  }
+  
+  /* Logo Styling */
+  .logo-container {
+    z-index: 1;
+  }
+  
+  .logo {
+    display: block;
+  }
+  
+  /* Top Bar Styling */
+  .top-bar {
+    font-size: 0.9rem;
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 0.5rem 0;
+  }
+  
+  /* Bottom Bar Styling */
+  .bottom-bar {
+    position: relative;
+    background-color: #fff;
+    padding: 0.5rem 0;
+  }
+  
+  /* Navigation Links */
+  .navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-item .nav-link {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+  }
+  
+  .nav-item .nav-link:hover {
+    color: #007bff;
+  }
+  
+  /* Search Bar */
+  .search-bar {
+    flex-shrink: 0;
+  }
+  

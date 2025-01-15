@@ -1,9 +1,7 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CardCarousel.css";
-
-// Import the trips data (Assuming you have a local JSON file)
-import tripsData from "./trips.json"; // Adjust the path ast needed
+import tripsData from "./trips.json"; // Adjust the path as needed
 
 const CardCarousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -13,8 +11,8 @@ const CardCarousel: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
-  // Fetch the trips data from the trips.json
-  const cards = tripsData;
+  // Filter trips to include only the first 4 (IDs 1 to 4)
+  const cards = tripsData.filter((trip) => parseInt(trip.id, 10) <= 4);
 
   // Get the previous, current, and next indices in a circular manner
   const getPrevIndex = (index: number) => (index - 1 + cards.length) % cards.length;
@@ -24,7 +22,7 @@ const CardCarousel: React.FC = () => {
   const visibleCards = [
     cards[getPrevIndex(currentIndex)], // Left card
     cards[currentIndex],               // Center card
-    cards[getNextIndex(currentIndex)]  // Right card
+    cards[getNextIndex(currentIndex)], // Right card
   ];
 
   const handleDragStart = (clientX: number) => {
@@ -55,7 +53,6 @@ const CardCarousel: React.FC = () => {
     setDragDistance(0);
   };
 
-  // Touch event handlers
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     handleDragStart(e.touches[0].clientX);
   };
@@ -68,7 +65,6 @@ const CardCarousel: React.FC = () => {
     handleDragEnd();
   };
 
-  // Mouse event handlers
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
     handleDragStart(e.clientX);
@@ -117,7 +113,7 @@ const CardCarousel: React.FC = () => {
         className="carousel-track"
         style={{
           transform: getTranslateX(),
-          transition: isDragging ? "none" : "transform 0.3s ease-out"
+          transition: isDragging ? "none" : "transform 0.3s ease-out",
         }}
       >
         {visibleCards.map((card, index) => (
@@ -130,13 +126,14 @@ const CardCarousel: React.FC = () => {
             <p className="card-price">Price: {card.tprice}</p>
             {index === 1 && (
               <button
-                onClick={() => handleLearnMoreClick(card.id)} // Call the function to navigate to the trip description page
+                onClick={() => handleLearnMoreClick(card.id)}
                 className="btn btn-primary"
               >
                 Learn More
               </button>
             )}
           </div>
+          
         ))}
       </div>
     </div>
