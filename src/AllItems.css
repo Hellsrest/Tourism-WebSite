@@ -1,0 +1,67 @@
+.all-items-container {
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.item-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.item-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.item-details {
+  text-align: center;
+}
+
+.item-name {
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.item-description {
+  font-size: 1rem;
+  color: #555;
+}
+
+.learn-more-button {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination-button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.pagination-button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

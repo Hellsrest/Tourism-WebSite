@@ -1,5 +1,8 @@
 import React from "react";
 
+import tripsData from "./trips.json";
+import guidesData from "./guides.json";
+
 import TopCarousel from "./TopCarousel";
 import CardCarousel from "./CardCarousel";
 import HorizentalCards from "./HorizentalCards";
@@ -18,8 +21,22 @@ import pfp2 from "/assets/images/pfp2.jpg";
 import pfp3 from "/assets/images/pfp3.jpg";
 import pfp4 from "/assets/images/pfp4.jpg";
 
+const getRandomItems = (data: any[], count: number): any[] => {
+  return data
+    .sort(() => Math.random() - 0.5) // Shuffle the data randomly
+    .slice(0, count); // Take the first 'count' items
+};
+
+
+
 const Home: React.FC = () => {
   
+ // Filter trips to only include those with IDs >= 5
+ const filteredTrips = tripsData.filter((trip) => parseInt(trip.id, 10) >= 5);
+
+ // Get 4 random trips and guides
+ const randomTrips = getRandomItems(filteredTrips, 4);
+ const randomGuides = getRandomItems(guidesData, 4);
 
   const carouselData = [
     {
@@ -101,7 +118,14 @@ const Home: React.FC = () => {
         <b>Our Services</b>
       </center>
       <center>Trekking and Hiking all over the World</center>
-      <HorizentalCards />
+      <HorizentalCards
+        data={randomTrips.map((trip) => ({
+          id: trip.id,
+          name: trip.tripname,
+          image: trip.timage,
+        }))}
+        type="trip"
+      />
 
       <center>
         <b>Why Us</b>
@@ -116,7 +140,14 @@ const Home: React.FC = () => {
       <center>
         <b>Travel Guides</b>
       </center>
-      <HorizentalCards />
+      <HorizentalCards
+        data={randomGuides.map((guide) => ({
+          id: guide.id,
+          name: guide.guidename,
+          image: guide.guideimage,
+        }))}
+        type="guide"
+      />
 
       <ContactInfo />
 

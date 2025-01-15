@@ -5,7 +5,7 @@ import Home from "./Home";
 import Checkout from "./Checkout";
 import TripDescription from "./TripDescription";
 import TripLayout from "./TripLayout";
-import AllTrips from "./TripDescriptionComponents/AllTrips";
+import AllItems from "./AllItems";
 
 const App: React.FC = () => {
   return (
@@ -40,13 +40,13 @@ const App: React.FC = () => {
           }
         />
         <Route
-          path="/alltrips"
-          element={
-            <Layout>
-              <AllTrips />
-            </Layout>
-          }
-        />
+        path="/alltrips"
+        element={<Layout><AllItems type="trip" /></Layout>}
+      />
+      <Route
+        path="/allguides"
+        element={<Layout><AllItems type="guide" /></Layout>}
+      />
       </Routes>
     </Router>
   );

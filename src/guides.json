@@ -1,0 +1,43 @@
+[
+    {
+      "id": "1",
+      "guidename": "Beginner's Guide to Trekking",
+      "guideshortdescription": "A comprehensive guide for beginners who want to start trekking.",
+      "guideimage": "/assets/images/guide1.jpg",
+      "guidedescription": "This guide covers the basics of trekking, including essential gear, safety tips, and how to choose beginner-friendly trails.",
+      "guiderelatedtrips": [1, 2, 3, 4, 5]
+    },
+    {
+      "id": "2",
+      "guidename": "Top Mountain Destinations in the World",
+      "guideshortdescription": "Explore the most breathtaking mountain destinations around the globe.",
+      "guideimage": "/assets/images/guide2.jpg",
+      "guidedescription": "Discover the beauty of the world's top mountain destinations, their unique features, and why they are a must-visit for adventure enthusiasts.",
+      "guiderelatedtrips": [1, 2, 3, 4, 5]
+    },
+    {
+      "id": "3",
+      "guidename": "Packing Essentials for a Hiking Trip",
+      "guideshortdescription": "Learn what to pack for a safe and enjoyable hiking experience.",
+      "guideimage": "/assets/images/guide3.jpg",
+      "guidedescription": "This guide provides a detailed list of essential items to carry on a hiking trip, ensuring you are well-prepared for any situation.",
+      "guiderelatedtrips": [1, 2, 3, 4, 5]
+    },
+    {
+      "id": "4",
+      "guidename": "Safety Tips for Solo Travelers",
+      "guideshortdescription": "A must-read guide for solo adventurers to stay safe during their journeys.",
+      "guideimage": "/assets/images/guide4.jpg",
+      "guidedescription": "Packed with practical advice, this guide helps solo travelers navigate through unfamiliar territories while ensuring their safety.",
+      "guiderelatedtrips": [1, 2, 3, 4, 5]
+    },
+    {
+      "id": "5",
+      "guidename": "How to Choose the Right Hiking Boots",
+      "guideshortdescription": "Find the perfect hiking boots for your next adventure.",
+      "guideimage": "/assets/images/guide5.jpg",
+      "guidedescription": "This guide helps you select the ideal hiking boots by explaining the factors to consider, such as fit, material, and terrain compatibility.",
+      "guiderelatedtrips": [1, 2, 3, 4, 5]
+    }
+  ]
+  
