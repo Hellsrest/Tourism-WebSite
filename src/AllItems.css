@@ -1,97 +1,67 @@
-/* General Navbar Styling */
-.navbar {
-  background-color: #f8f9fa;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.all-items-container {
+  margin: 20px auto;
+  max-width: 800px;
 }
 
-.navbar-container {
+.item-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.item-image {
   width: 100%;
-  max-width: 1200px;
-}
-
-/* Logo Section */
-.logo-container {
-  flex: 1;
-}
-
-.logo {
-  max-width: 100px;
   height: auto;
+  border-radius: 5px;
 }
 
-/* Centered Info Section */
-.info-container {
-  flex: 2;
+.item-details {
   text-align: center;
-  font-size: 14px;
+}
+
+.item-name {
+  font-size: 1.5rem;
   color: #333;
+  cursor: pointer;
+}
+
+.item-description {
+  font-size: 1rem;
+  color: #555;
+}
+
+.learn-more-button {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination {
   display: flex;
   justify-content: center;
-  gap: 15px; /* Adjust space between items */
+  margin-top: 20px;
 }
 
-.tourism-licence,
-.phone-number {
-  display: inline-block; /* Ensures they appear inline */
-  margin: 5px 0;
+.pagination-button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  cursor: pointer;
 }
 
-/* Navigation Links Section */
-.links-container {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
+.pagination-button.active {
+  background-color: #007bff;
+  color: white;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-item {
-  font-size: 14px;
-}
-
-.nav-link {
-  text-decoration: none;
-  color: #007bff;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #0056b3;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .navbar-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .links-container {
-    margin-top: 10px;
-    justify-content: center;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  /* Stack the tourism licence and phone numbers vertically on small screens */
-  .info-container {
-    flex-direction: column;
-  }
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

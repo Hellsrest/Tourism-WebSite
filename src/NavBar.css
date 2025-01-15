@@ -1,51 +1,92 @@
 /* General Navbar Styling */
 .navbar {
-    padding: 0.5rem 1rem;
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Logo Section */
+.logo-container {
+  flex: 1;
+}
+
+.logo {
+  max-width: 100px;
+  height: auto;
+}
+
+/* Centered Info Section */
+.info-container {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Space between items */
+  font-size: 14px;
+  color: #333;
+  align-items: center; /* Vertically align the text */
+}
+
+.tourism-licence,
+.phone-number {
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Navigation Links Section */
+.links-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  font-size: 14px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Adds space between sections for smaller screens */
   }
-  
-  /* Logo Styling */
-  .logo-container {
-    z-index: 1;
+
+  .info-container {
+    justify-content: center; /* Center content */
+    gap: 10px; /* Adjust gap for smaller screens */
+    flex-wrap: wrap; /* Allow wrapping for very small screens */
   }
-  
-  .logo {
-    display: block;
+
+  .links-container {
+    justify-content: center;
   }
-  
-  /* Top Bar Styling */
-  .top-bar {
-    font-size: 0.9rem;
-    text-align: center;
-    background-color: #f8f9fa;
-    padding: 0.5rem 0;
-  }
-  
-  /* Bottom Bar Styling */
-  .bottom-bar {
-    position: relative;
-    background-color: #fff;
-    padding: 0.5rem 0;
-  }
-  
-  /* Navigation Links */
-  .navbar-nav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .nav-item .nav-link {
-    text-decoration: none;
-    color: #000;
-    font-weight: 500;
-  }
-  
-  .nav-item .nav-link:hover {
-    color: #007bff;
-  }
-  
-  /* Search Bar */
-  .search-bar {
-    flex-shrink: 0;
-  }
-  
+}
