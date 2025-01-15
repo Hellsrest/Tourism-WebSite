@@ -5,7 +5,7 @@ import "./TripTitle.css";
 import tripsData from "../trips.json"; // Update the path as necessary
 
 interface Trip {
-  id: number;
+  id: string;
   tripname: string;
   tripshortdescription: string;
   timage: string;

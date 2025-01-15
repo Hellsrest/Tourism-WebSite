@@ -22,7 +22,7 @@ const App: React.FC = () => {
 
         {/* Checkout Page */}
         <Route
-          path="/checkout"
+          path="/checkout/:tripId"
           element={
             <Layout>
               <Checkout />

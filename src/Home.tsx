@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import TopCarousel from "./TopCarousel";
 import CardCarousel from "./CardCarousel";
@@ -43,13 +42,6 @@ const Home: React.FC = () => {
       productName: "random-adventure",
       action: "none" as "none",
     },
-  ];
-
-  const cards = [
-    { id: "1", name: "Product 1", image: cardimage1, price: "$10" },
-    { id: "2", name: "Product 2", image: cardimage2, price: "$20" },
-    { id: "3", name: "Product 3", image: cardimage3, price: "$30" },
-    { id: "4", name: "Product 40", image: cardimage4, price: "$40" },
   ];
 
   const horizentalcarditems = [
@@ -104,13 +96,11 @@ const Home: React.FC = () => {
       <center>
       <div className="checkout-button-container">
       {/* Button to navigate to Checkout page */}
-      <Link to="/checkout">
-        <button className="btn btn-primary">Go to Checkout</button>
-      </Link>
+
     </div>
         <b>Our Trips</b>
       </center>
-      <CardCarousel cards={cards} />
+      <CardCarousel/>
 
       <center>
         <b>Trekking Destinations</b>

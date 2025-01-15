@@ -1,5 +1,5 @@
 import logotop from "./assets/images/logo.jpg";
-
+import { Link } from "react-router-dom";
 interface LinkProps {
   staticlinks: string[];
   tourismlicence: string;
@@ -17,12 +17,14 @@ function NavBar({
     <nav className="navbar navbar-expand-lg navbar-light bg-light position-relative">
       {/* Logo positioned absolutely to span both rows */}
       <div className="position-absolute top-0 end- -100 h-100 d-flex align-items-center me-4">
-        <img
-          src={logotop}
-          alt="Company Logo"
-          style={{ width: "100px", height: "auto" }}
-          className="d-inline-block"
-        />
+        <Link to="/">
+          <img
+            src={logotop}
+            alt="Company Logo"
+            style={{ width: "100px", height: "auto" }}
+            className="d-inline-block"
+          />
+        </Link>
       </div>
 
       <div className="container-fluid">
@@ -42,9 +44,12 @@ function NavBar({
 
           {/* Bottom row with Navigation Links and Search */}
           <div className="col-12 py-2">
-            <div className="d-flex justify-content-between align-items-center position-relative" >
+            <div className="d-flex justify-content-between align-items-center position-relative">
               {/* Empty div for left spacing */}
-              <div className="invisible" style={{ width: "200px", backgroundColor: '#0049AF' }}></div>
+              <div
+                className="invisible"
+                style={{ width: "200px", backgroundColor: "#0049AF" }}
+              ></div>
 
               {/* Navigation Links - Centered */}
               <ul className="navbar-nav mb-0 d-flex flex-row gap-4 position-absolute start-50 translate-middle-x">

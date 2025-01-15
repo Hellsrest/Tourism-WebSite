@@ -1,23 +1,20 @@
 import React, { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import "./CardCarousel.css";
 
-interface CardData {
-  id: string;
-  name: string;
-  image: string;
-  price: string;
-}
+// Import the trips data (Assuming you have a local JSON file)
+import tripsData from "./trips.json"; // Adjust the path ast needed
 
-interface CardCarouselProps {
-  cards: CardData[];
-}
-
-const CardCarousel: React.FC<CardCarouselProps> = ({ cards }) => {
+const CardCarousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState<number | null>(null);
   const [dragDistance, setDragDistance] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
+
+  // Fetch the trips data from the trips.json
+  const cards = tripsData;
 
   // Get the previous, current, and next indices in a circular manner
   const getPrevIndex = (index: number) => (index - 1 + cards.length) % cards.length;
@@ -100,8 +97,12 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ cards }) => {
     return `translateX(${baseTranslate + dragOffset}px)`;
   };
 
+  const handleLearnMoreClick = (id: string) => {
+    navigate(`/trip/${id}`); // Redirect to the trip description page with the trip ID
+  };
+
   return (
-    <div 
+    <div
       className="card-carousel"
       ref={containerRef}
       onTouchStart={handleTouchStart}
@@ -112,11 +113,11 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ cards }) => {
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseLeave}
     >
-      <div 
+      <div
         className="carousel-track"
         style={{
           transform: getTranslateX(),
-          transition: isDragging ? 'none' : 'transform 0.3s ease-out'
+          transition: isDragging ? "none" : "transform 0.3s ease-out"
         }}
       >
         {visibleCards.map((card, index) => (
@@ -124,16 +125,16 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ cards }) => {
             key={`${card.id}-${index}`}
             className={`carousel-card ${index === 1 ? "active-card" : ""}`}
           >
-            <img src={card.image} alt={card.name} className="card-img" />
-            <h5 className="card-title">{card.name}</h5>
-            <p className="card-price">Price: {card.price}</p>
+            <img src={card.timage} alt={card.tripname} className="card-img" />
+            <h5 className="card-title">{card.tripname}</h5>
+            <p className="card-price">Price: {card.tprice}</p>
             {index === 1 && (
-              <a
-                href={`https://example.com/${card.id}`}
+              <button
+                onClick={() => handleLearnMoreClick(card.id)} // Call the function to navigate to the trip description page
                 className="btn btn-primary"
               >
-                Book Now
-              </a>
+                Learn More
+              </button>
             )}
           </div>
         ))}

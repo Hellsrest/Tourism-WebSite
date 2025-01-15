@@ -1,0 +1,65 @@
+.checkout-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .checkout-trip-details {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .trip-image {
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .trip-info h3 {
+    margin: 0;
+  }
+  
+  .checkout-discount {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-left: 20px;
+  }
+  
+  .checkout-discount ul {
+    padding: 0;
+    list-style: none;
+  }
+  
+  .travellers-info {
+    margin-top: 10px;
+  }
+  
+  .final-price {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  @media (max-width: 768px) {
+    .checkout-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .checkout-trip-details {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .checkout-discount {
+      margin-left: 0;
+      align-items: center;
+      margin-top: 20px;
+    }
+  }
+  

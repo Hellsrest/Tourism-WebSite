@@ -2,14 +2,15 @@ import  { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './TripPurchase.css';
 
+
 const TripPurchase = () => {
-  const { id } = useParams<{ id: string }>(); // Get the trip ID from the URL
+  const { tripId } = useParams<{ tripId: string }>(); // Get the trip ID from the URL
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handlePurchaseClick = () => {
     // Redirect to checkout page with trip id
-    navigate(`/checkout/${id}`);
+    navigate(`/checkout/${tripId}`);
   };
 
   const handleGroupDiscountClick = () => {
@@ -19,7 +20,7 @@ const TripPurchase = () => {
 
   const handleAskQuestionClick = () => {
     // Redirect to contact us page with trip id
-    navigate(`/contactus/${id}`);
+    navigate(`/contactus/${tripId}`);
   };
 
   return (
