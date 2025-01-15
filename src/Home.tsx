@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import TopCarousel from "./TopCarousel";
 import CardCarousel from "./CardCarousel";
 import HorizentalCards from "./HorizentalCards";
@@ -100,6 +102,12 @@ const Home: React.FC = () => {
       <TopCarousel data={carouselData} interval={3000} />
 
       <center>
+      <div className="checkout-button-container">
+      {/* Button to navigate to Checkout page */}
+      <Link to="/checkout">
+        <button className="btn btn-primary">Go to Checkout</button>
+      </Link>
+    </div>
         <b>Our Trips</b>
       </center>
       <CardCarousel cards={cards} />
