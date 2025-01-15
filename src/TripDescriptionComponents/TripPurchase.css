@@ -1,0 +1,81 @@
+.treck-purchase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+  }
+  
+  .purchase-now-btn,
+  .group-discount-btn,
+  .ask-question-btn {
+    width: 100%;
+    max-width: 300px;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+  }
+  
+  .purchase-now-btn {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .purchase-now-btn:hover {
+    background-color: #218838;
+  }
+  
+  .group-discount-btn {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .group-discount-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .ask-question-btn {
+    background-color: #ffc107;
+    color: white;
+  }
+  
+  .ask-question-btn:hover {
+    background-color: #e0a800;
+  }
+  
+  /* Group discount dropdown menu */
+  .discount-dropdown {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .discount-dropdown li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .discount-dropdown li:last-child {
+    border-bottom: none;
+  }
+  
+  /* Ensure responsiveness */
+  @media (max-width: 768px) {
+    .purchase-now-btn,
+    .group-discount-btn,
+    .ask-question-btn {
+      width: 90%;
+    }
+  }
+  

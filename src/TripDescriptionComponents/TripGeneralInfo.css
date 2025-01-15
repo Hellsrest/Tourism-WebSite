@@ -1,0 +1,50 @@
+.general-info {
+  padding: 20px;
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto; /* Center the table */
+}
+
+.table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  color: #333; /* Slightly gray color */
+}
+
+.table td strong {
+  color: #333;
+  font-weight: 600;
+  font-size: 16px; /* Make the label slightly bigger on smaller screens */
+}
+
+.table td:last-child {
+  font-weight: 400; /* Keep the values slightly lighter */
+}
+
+.table tr:last-child td {
+  border-bottom: none; /* Remove border for last row */
+}
+
+@media (max-width: 768px) {
+  .table {
+    font-size: 14px; /* Adjust font size for mobile */
+  }
+
+  .table td {
+    padding: 10px;
+  }
+
+  .table td strong {
+    font-size: 16px; /* Make the label slightly bigger on smaller screens */
+    color: #333; /* Slightly gray color */
+  }
+}

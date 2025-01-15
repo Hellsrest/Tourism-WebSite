@@ -44,16 +44,34 @@
   
   /* Mobile responsive */
   @media (max-width: 768px) {
-    .d-flex {
-      flex-direction: row !important;
+    .d-flex.justify-content-start {
+      flex-direction: column !important;
+      align-items: flex-start !important;
     }
   
     .me-3 {
-      margin-right: 10px;
+      margin-right: 0 !important;
+      margin-bottom: 20px;
+      width: 100%;
     }
   
-    .number-input input[type="number"] {
-      width: 50px;
+    .d-flex.align-items-center {
+      width: 100%;
+    }
+  
+    /* Make the date input full width on mobile */
+    input[type="date"] {
+      width: 100%;
+    }
+  
+    /* Adjust travellers section layout */
+    .number-input {
+      margin-top: 10px;
+    }
+  
+    /* Make labels full width */
+    label {
+      display: block;
+      margin-bottom: 8px;
     }
   }
-  
