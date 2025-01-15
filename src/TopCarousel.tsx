@@ -1,13 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./TopCarousel.css"
+import "./TopCarousel.css";
+
+interface CarouselData {
+  image: string; // URL or path of the image
+  productName: string; // Name of the product
+  action: "checkout" | "info" | "blog" | "none"; // Action type
+}
 
 interface CarouselProps {
-  images: string[];
-  links: string[];
+  data: CarouselData[]; // Array of carousel items
   interval: number; // Time in milliseconds
 }
 
-const Carousel: React.FC<CarouselProps> = ({ images, links, interval }) => {
+const Carousel: React.FC<CarouselProps> = ({ data, interval }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState<number | null>(null);
@@ -27,16 +32,16 @@ const Carousel: React.FC<CarouselProps> = ({ images, links, interval }) => {
   }, [currentIndex, interval, isDragging]);
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
   };
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      prevIndex === 0 ? data.length - 1 : prevIndex - 1
     );
   };
 
-  // Enhanced drag functionality for both touch and mouse events
+  // Drag functionality for both touch and mouse events
   const handleDragStart = (clientX: number) => {
     setIsDragging(true);
     setStartX(clientX);
@@ -46,7 +51,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, links, interval }) => {
 
   const handleDragMove = (clientX: number) => {
     if (!isDragging || startX === null) return;
-    
+
     const diff = startX - clientX;
     setDragDistance(diff);
   };
@@ -67,72 +72,51 @@ const Carousel: React.FC<CarouselProps> = ({ images, links, interval }) => {
     setDragDistance(0);
   };
 
-  // Touch event handlers
-  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    handleDragStart(e.touches[0].clientX);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    handleDragMove(e.touches[0].clientX);
-  };
-
-  const handleTouchEnd = () => {
-    handleDragEnd();
-  };
-
-  // Mouse event handlers
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    handleDragStart(e.clientX);
-  };
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    handleDragMove(e.clientX);
-  };
-
-  const handleMouseUp = () => {
-    handleDragEnd();
-  };
-
-  const handleMouseLeave = () => {
-    if (isDragging) {
-      handleDragEnd();
-    }
-  };
-
-  // Improved click handler to better distinguish between drags and clicks
   const handleClick = () => {
     const dragDuration = Date.now() - dragStartTime.current;
-    
-    // Only redirect if it was a short interaction and minimal dragging occurred
+
+    // Only perform actions if it was a short interaction and minimal dragging occurred
     if (dragDuration < 200 && Math.abs(dragDistance) < 5) {
-      window.location.href = links[currentIndex];
+      const { action, productName } = data[currentIndex];
+
+      if (action === "checkout") {
+        window.location.href = `/${productName}-checkout`;
+      } else if (action === "info") {
+        window.location.href = `/${productName}-info`;
+      } else if (action === "blog") {
+        window.location.href = `/${productName}-blog`;
+      }
+      // If action is "none", do nothing
     }
   };
 
   return (
     <div
-    
       ref={containerRef}
       className="carousel-container"
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-      onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-      onMouseLeave={handleMouseLeave}
+      onTouchStart={(e) => handleDragStart(e.touches[0].clientX)}
+      onTouchMove={(e) => handleDragMove(e.touches[0].clientX)}
+      onTouchEnd={handleDragEnd}
+      onMouseDown={(e) => {
+        e.preventDefault();
+        handleDragStart(e.clientX);
+      }}
+      onMouseMove={(e) => {
+        e.preventDefault();
+        handleDragMove(e.clientX);
+      }}
+      onMouseUp={handleDragEnd}
+      onMouseLeave={handleDragEnd}
       onClick={handleClick}
-      style={{ 
-        width: "100%", 
-        overflow: "hidden", 
+      style={{
+        width: "100%",
+        overflow: "hidden",
         position: "relative",
-        cursor: isDragging ? "grabbing" : "grab"
+        cursor: isDragging ? "grabbing" : "grab",
       }}
     >
       <img
-        src={images[currentIndex]}
+        src={data[currentIndex].image}
         alt={`Carousel Image ${currentIndex + 1}`}
         className="carousel-image"
         style={{
@@ -145,16 +129,16 @@ const Carousel: React.FC<CarouselProps> = ({ images, links, interval }) => {
 
       <div
         className="carousel-dots"
-        style={{ 
-          position: "absolute", 
-          bottom: "10px", 
+        style={{
+          position: "absolute",
+          bottom: "10px",
           width: "100%",
           display: "flex",
           justifyContent: "center",
-          gap: "5px"
+          gap: "5px",
         }}
       >
-        {images.map((_, index) => (
+        {data.map((_, index) => (
           <span
             key={index}
             onClick={(e) => {
