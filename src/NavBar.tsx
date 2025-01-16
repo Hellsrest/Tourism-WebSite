@@ -41,7 +41,7 @@ const NavBar: React.FC<LinkProps> = ({
             ) : (
               staticlinks.map((link, index) => (
                 <li key={index} className="nav-item">
-                  <Link to="#" className="nav-link">
+                  <Link to="/contactus" className="nav-link">
                     {link}
                   </Link>
                 </li>
