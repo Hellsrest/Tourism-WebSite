@@ -1,0 +1,45 @@
+.contact-us-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .contact-us-form {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+  }
+  
+  .map-container {
+    flex: 1;
+    height: 400px;
+    margin-left: 20px;
+    display: none; /* Hidden by default */
+  }
+  
+  @media (min-width: 768px) {
+    .contact-us-container {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .map-container {
+      display: block; /* Visible on desktop */
+    }
+  }
+  
+  .submit-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  

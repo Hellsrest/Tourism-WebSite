@@ -1,0 +1,116 @@
+.about-us-container {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .hero-section {
+    background: linear-gradient(to right, #56ccf2, #2f80ed);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-description {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .mission-section,
+  .why-choose-us,
+  .testimonials-section {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2f80ed;
+  }
+  
+  .section-description {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 40px;
+  }
+  
+  .features-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .feature-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .feature-icon {
+    font-size: 3rem;
+    color: #2f80ed;
+    margin-bottom: 10px;
+  }
+  
+  .testimonials-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .testimonial-card {
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .testimonial-text {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  
+  .testimonial-author {
+    font-style: italic;
+    color: #555;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+  
+    .hero-description {
+      font-size: 1.2rem;
+    }
+  
+    .features-container,
+    .testimonials-container {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+  

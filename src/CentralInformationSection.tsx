@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./CentralInformationSection.css";
 
 const CentralInformationSection: React.FC = () => {
@@ -14,10 +15,17 @@ const CentralInformationSection: React.FC = () => {
       <div className="text-section">
         <h2>Discover Amazing Destinations</h2>
         <p>
-          Explore the world and experience the beauty of nature, vibrant cities, and serene landscapes. Tourism brings you closer to new cultures and unforgettable experiences. Whether you're planning a peaceful getaway or an adventurous expedition, there's something for everyone to enjoy. 
+          Explore the world and experience the beauty of nature, vibrant cities,
+          and serene landscapes. Tourism brings you closer to new cultures and
+          unforgettable experiences. Whether you're planning a peaceful getaway
+          or an adventurous expedition, there's something for everyone to enjoy.
           <br />
           <br />
-          <button className="click-me-button">Click Me</button>
+          <Link to="/aboutus">
+            <button className="btn btn-light btn-lg px-5">
+              About Us
+            </button>
+          </Link>
         </p>
       </div>
 
@@ -27,7 +35,7 @@ const CentralInformationSection: React.FC = () => {
           <iframe
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/watch?v=gCRNEJxDJKM"
+ src="https://www.youtube.com/embed/gCRNEJxDJKM"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

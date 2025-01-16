@@ -7,6 +7,8 @@ import TripDescription from "./TripDescription";
 import TripLayout from "./TripLayout";
 import AllItems from "./AllItems";
 import GuidePage from "./GuidePage";
+import AboutUs from "./AboutUs";
+import ContactUs from "./ContactUs";
 
 const App: React.FC = () => {
   return (
@@ -62,6 +64,24 @@ const App: React.FC = () => {
           element={
             <Layout>
               <GuidePage />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/aboutus"
+          element={
+            <Layout>
+              <AboutUs />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/contactus"
+          element={
+            <Layout>
+              <ContactUs />
             </Layout>
           }
         />
