@@ -2,7 +2,7 @@ import React from "react";
 import logotop from "./assets/images/logo.jpg";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
-
+// Chnage to merge from master to main
 interface LinkProps {
   staticlinks: string[];
   tourismlicence: string;
