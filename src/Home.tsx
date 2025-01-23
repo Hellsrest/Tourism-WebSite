@@ -42,22 +42,22 @@ const Home: React.FC = () => {
     {
       image: banner1,
       productName: "himalayan-trek",
-      action: "checkout" as "checkout",
+      action: "/trip/3",
     },
     {
       image: banner2,
       productName: "beach-vacation",
-      action: "blog" as "blog",
+      action: "/guide/2",
     },
     {
       image: banner3,
       productName: "city-tour",
-      action: "info" as "info",
+      action: "/checkout/2",
     },
     {
       image: banner4,
       productName: "random-adventure",
-      action: "none" as "none",
+      action: "/aboutus",
     },
   ];
 

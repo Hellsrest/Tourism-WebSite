@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect, useRef} from "react";
 import "./TopCarousel.css";
 
 interface CarouselData {
   image: string; // URL or path of the image
   productName: string; // Name of the product
-  action: "checkout" | "info" | "blog" | "none"; // Action type
+  action: string; // Action type
 }
 
 interface CarouselProps {
@@ -19,7 +20,7 @@ const Carousel: React.FC<CarouselProps> = ({ data, interval }) => {
   const [dragDistance, setDragDistance] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const dragStartTime = useRef<number>(0);
-
+  const navigate=useNavigate();
   // Auto-slide functionality
   useEffect(() => {
     const timer = setInterval(() => {
@@ -74,19 +75,10 @@ const Carousel: React.FC<CarouselProps> = ({ data, interval }) => {
 
   const handleClick = () => {
     const dragDuration = Date.now() - dragStartTime.current;
-
-    // Only perform actions if it was a short interaction and minimal dragging occurred
+    navigate
     if (dragDuration < 200 && Math.abs(dragDistance) < 5) {
-      const { action, productName } = data[currentIndex];
-
-      if (action === "checkout") {
-        window.location.href = `/${productName}-checkout`;
-      } else if (action === "info") {
-        window.location.href = `/${productName}-info`;
-      } else if (action === "blog") {
-        window.location.href = `/${productName}-blog`;
-      }
-      // If action is "none", do nothing
+      const { action } = data[currentIndex];
+        navigate(action);
     }
   };
 
