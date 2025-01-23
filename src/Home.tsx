@@ -11,10 +11,10 @@ import ReviewCarousel from "./ReviewCarousel";
 import ContactInfo from "./ContactInfo";
 
 
-import banner1 from "./assets/images/logo.jpg";
-import banner2 from "./assets/images/banner-2.jpg";
-import banner3 from "./assets/images/banner-3.jpg";
-import banner4 from "./assets/images/banner-4.jpg";
+import banner1 from "./assets/images/banner-1.png";
+import banner2 from "./assets/images/banner-2.png";
+import banner3 from "./assets/images/banner-3.png";
+import banner4 from "./assets/images/banner-4.png";
 
 import pfp1 from "/assets/images/pfp1.jpg";
 import pfp2 from "/assets/images/pfp2.jpg";
