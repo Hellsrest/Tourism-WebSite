@@ -2,9 +2,10 @@ import React from "react";
 import logotop from "./assets/images/logo.jpg";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
-// Chnage to merge from master to main
+
 interface LinkProps {
-  staticlinks: string[];
+  staticlinks: string[]; // Array of strings for static links
+  redirect: string[]; // Array of strings for corresponding redirects
   tourismlicence: string;
   phonenumber1: string;
   phonenumber2: string;
@@ -12,6 +13,7 @@ interface LinkProps {
 
 const NavBar: React.FC<LinkProps> = ({
   staticlinks,
+  redirect,
   tourismlicence,
   phonenumber1,
   phonenumber2,
@@ -41,7 +43,7 @@ const NavBar: React.FC<LinkProps> = ({
             ) : (
               staticlinks.map((link, index) => (
                 <li key={index} className="nav-item">
-                  <Link to="/contactus" className="nav-link">
+                  <Link to={redirect[index]} className="nav-link">
                     {link}
                   </Link>
                 </li>
